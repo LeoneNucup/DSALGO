@@ -1,3 +1,6 @@
+# Keele, Regine
+# Nucup, Leone
+# CS-201
 class Node:
     def __init__(self,data):
         self.left = None
@@ -30,8 +33,8 @@ def Level(root, height):
     if height == 1:
         print(root.node ,end=" ")
 
-    left = Level(root.left , height-1)
-    right = Level(root.right , height-1)
+    Level(root.left , height-1)
+    Level(root.right , height-1)
 
 root = Node (35)
 
