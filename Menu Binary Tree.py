@@ -29,10 +29,10 @@ def Level(root, height):
         return
     if height == 1:
         print(root.node ,end=" ")
-    
+
     left = Level(root.left , height-1)
     right = Level(root.right , height-1)
-    
+
 root = Node (35)
 
 root.left = Node(10)
