@@ -1,6 +1,3 @@
-# Keele, Regine
-# Nucup, Leone
-# CS-201
 class Node:
     def __init__(self,data):
         self.left = None
