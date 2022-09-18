@@ -2,36 +2,36 @@ class Node:
     def __init__(self,data):
         self.left = None
         self.right = None
-        self.node = data
+        self.data = data
 
-def Preorder(root):
+def preorder(root):
     if root:
-        print(root.node, end = " ")
-        Preorder(root.left)
-        Preorder(root.right)
+        print(root.data, end = " ")
+        preorder(root.left)
+        preorder(root.right)
 
-def Inorder(root):
+def inorder(root):
     if root:
-        Inorder(root.left)
-        print(root.node, end = " ")
-        Inorder(root.right)
+        inorder(root.left)
+        print(root.data, end = " ")
+        inorder(root.right)
 
 
-def Postorder(root):
+def postorder(root):
     if root:
-        Postorder(root.left)
-        Postorder(root.right)
-        print(root.node, end = " ")
+        postorder(root.left)
+        postorder(root.right)
+        print(root.data, end = " ")
 
 
-def Level(root, height):
+def level(root, height):
     if root is None:
         return
     if height == 1:
-        print(root.node ,end=" ")
+        print(root.data ,end=" ")
 
-    Level(root.left , height-1)
-    Level(root.right , height-1)
+    level(root.left , height-1)
+    level(root.right , height-1)
 
 root = Node (35)
 
@@ -64,7 +64,7 @@ def menu():
     print("\n\n[1]Pre Order")
     print("[2]In Order")
     print("[3]Post Order")
-    print("[4]Level Order")
+    print("[4]level Order")
     print("[5]Exit")
     cho = input("Input Choice: ")
     while cho not in ['1','2','3','4','5']:
@@ -76,25 +76,25 @@ def menu():
 def option(cho):
     if cho == "1":
         print("\nPre Order: " , end =" " )
-        Preorder(root)
+        preorder(root)
         menu()
     elif cho == '2':
         print("\nIn Order: " , end =" " )
-        Inorder(root)
+        inorder(root)
 
         menu()
 
     elif cho == '3':
         print("\nPost Order: " , end =" " )
-        Postorder(root)
+        postorder(root)
 
         menu()
 
     elif cho == '4':
-        print("\nLevel Order: " , end =" " )
+        print("\nlevel Order: " , end =" " )
         height = 1
         while height < 7:
-            Level(root,height)
+            level(root,height)
             height +=1
 
         menu()
