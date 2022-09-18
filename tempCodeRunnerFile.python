@@ -1,0 +1,10 @@
+
+cho = 1
+while cho != 6:
+    a = input("first letter :")
+    b = input('second letter :')
+    if a > b:
+        print (b,a)
+    elif b > a:
+        print(a,b)
+    cho = input("")
