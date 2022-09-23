@@ -38,11 +38,58 @@ def bubble_sort():
         print("\n\nResult of Descending Order Bubble Sorting:")
         print(bubble_list)
 
+def insertion_sort():
+    insertion_list = list_main.copy()
+    print("\n\n[1]Ascending")
+    print("[2]Descending")
+    sel = input('Input choice: ')
+    if sel == '1':
+        print(insertion_list,'\n')
+        ctr = 0
+        for x in range(1,len(insertion_list)):
+            while insertion_list[x] < insertion_list[x-1] and x > 0:
+                    print("Loop{0}: {1} < {2}".format(ctr,insertion_list[x],insertion_list[x-1]),end = ' ')
+                    temp = insertion_list[x]
+                    insertion_list[x] = insertion_list[x-1]
+                    insertion_list[x-1] = temp
+                    print(insertion_list)
+                    ctr+=1
+                    if insertion_list[x-1] < insertion_list[x] and x > 0:
+                        print("Loop{0}: {1} < {2}".format(ctr,insertion_list[x],insertion_list[x-1]),end = ' ')
+                        print(insertion_list)
+                    x-=1
+                    ctr+=1
+
+        print("\n\nResult of Ascending Order Insertion Sorting:")
+        print(insertion_list)
+
+    elif sel == '2':
+        print(insertion_list,'\n')
+        ctr = 0
+        for x in range(1,len(insertion_list)):
+            while insertion_list[x] > insertion_list[x-1] and x > 0:
+                    print("Loop{0}: {1} > {2}".format(ctr,insertion_list[x],insertion_list[x-1]),end = ' ')
+                    temp = insertion_list[x]
+                    insertion_list[x] = insertion_list[x-1]
+                    insertion_list[x-1] = temp
+                    print(insertion_list)
+                    ctr+=1
+                    if insertion_list[x-1] > insertion_list[x] and x > 0:
+                        print("Loop{0}: {1} > {2}".format(ctr,insertion_list[x],insertion_list[x-1]),end = ' ')
+                        print(insertion_list)
+                    x-=1
+                    ctr+=1
+
+        print("\n\nResult of Descending Order Insertion Sorting:")
+        print(insertion_list)
+
+
+
 def menu():
     print("\n\n-----Menu-----")
     print("[1]Bubble Sort")
     print("[2]Selection Sort")
-    print("[3]...")
+    print("[3]Insertion")
     print("[4]...")
     print("[5]...")
     print("[6]Exit")
@@ -60,7 +107,7 @@ def option(cho):
         menu()
 
     elif cho == '3':
-        print("Blank Option")
+        insertion_sort()
         menu()
 
     elif cho == '4':
@@ -76,16 +123,17 @@ def option(cho):
         exit()
 
 
-list_main= []
+list_main= [1,5,3,2,6,8]
 bubble_list = []
+insertion_list = []
 item = 1
-while item <= 6:
-    val = int(input("Enter Value {0}: ".format(item)))
-    if val not in list_main:
-        list_main.append(val)
-        item +=1
-    elif val in list_main:
-        print("Same Value in List")
+# while item <= 6:
+#     val = int(input("Enter Value {0}: ".format(item)))
+#     if val not in list_main:
+#         list_main.append(val)
+#         item +=1
+#     elif val in list_main:
+#         print("Same Value in List")
 menu()
 
 
