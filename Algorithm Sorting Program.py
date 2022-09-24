@@ -123,7 +123,7 @@ def option(cho):
         exit()
 
 
-list_main= [1,5,3,2,6,8]
+list_main= [9,5,1,4,3,8]
 bubble_list = []
 insertion_list = []
 item = 1
